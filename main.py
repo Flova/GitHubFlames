@@ -33,9 +33,11 @@ class GitHubFlames(object):
                     raise TypeError
         except KeyError:
             print("Please set correct .login.yaml file!")
+            return False
 
         if gh is None:
             print("Please set an login in the .login.yaml!")
+            return False
 
         # Get user
         self.me = gh.get_user()
