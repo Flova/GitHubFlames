@@ -1,5 +1,6 @@
-import datetime
+import os
 import yaml
+import datetime
 from github import Github
 
 
@@ -8,8 +9,11 @@ class GitHubFlames(object):
     Calculate a GitHub streak
     """
     def __init__(self):
+        # Create path
+        project_path = os.path.abspath(os.path.dirname(__file__))
+
         # Load login data
-        with open("login.yaml", "r") as f:
+        with open(os.path.join(project_path, "login.yaml"), "r") as f:
             login_data = yaml.safe_load(f)
 
         # Generate GitHub object placeholder
