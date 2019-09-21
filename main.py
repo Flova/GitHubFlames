@@ -71,7 +71,8 @@ class GitHubFlames(object):
         :return: bool
         """
 
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow()
+        now = now.replace(hour=23, minute=59, second=59, microsecond=999)
         end = now - datetime.timedelta(days=days)
         begin = now - datetime.timedelta(days=days+1)
         return self.commit_in_range(user, begin, end)
