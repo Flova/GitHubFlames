@@ -80,11 +80,12 @@ class GitHubFlames(object):
         """
         Calculates the gitHub Streak counted in days.
 
+        :param user: A github user
         :param offset: Date offset
         :return: Streak days
         """
         if user is None:
-            user =  self.me
+            user = self.me
         days = -1
         days += offset
         streak_active = True
