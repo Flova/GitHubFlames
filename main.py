@@ -83,12 +83,13 @@ class GitHubFlames(object):
         begin = now - datetime.timedelta(days=days+1)
         return self.commit_in_range(user, begin, end)
 
-    def streak(self, user=None, offset=0):
+    def streak(self, user=None, offset=1):
         """
         Calculates the gitHub Streak counted in days.
 
         :param user: A github user
-        :param offset: Date offset
+        :param offset: Date offset, default is 1 to show only the streak until yesterday,
+        otherwise the streak changes from 0 to 'streak' count if you commit.
         :return: Streak days
         """
         if user is None:
