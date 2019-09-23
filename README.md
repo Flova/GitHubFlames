@@ -1,5 +1,6 @@
 # GitHubFlames
 A Python script that calculates a GitHub Streak
+
 ## What is a Streak
 The script uses the GitHub Api to search for recent user activity. 
 If the user is continually contributing the days are counted, this is called a GitHub Streak.
